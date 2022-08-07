@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Decodificador de Texto</title>
+</head>
+
+<body>
+    <main>
+
+        <section class="logo">
+            <img src="img\alura-logo.svg" alt="Logo ALura">
+        </section>
+
+        <section class="entrada">
+            <textarea id="input" model="input" autofocus autocorrect="on" placeholder="Digite seu texto"></textarea>
+
+            <div class="informacao">
+                <img src="img\exclamacao.svg" alt="Ateção as regras">
+                <p>Apenas letras minúsculas e sem acento.</p>
+            </div>
+
+            <div class="botoes">
+                <button id="codificar" onclick="botaoCriptografar()">Criptografar</button>
+                <button id="decodificar" onclick="botaoDescriptografar()">Descriptografar</button>
+            </div>
+        </section>
+
+        <section class="resultado">
+            <div id="encriptado">
+                <textarea model="output" id="output" placeholder="Nenhuma mensagem"></textarea>
+                <p id="copiado">Copie e desafie os seus amigos.</p>
+                <button id="copiar" onclick="copiar()">Copiar</button>
+            </div>
+            <div id="sem-resultado">
+                <img src="img\garoto.svg" alt="Imagem aleatoria pra mostrar que não tem textos decodificados">
+                <h2>Nenhuma mensagem encontrada</h2>
+                <p>Digite um texto que você gostaria de codificar ou decodificar.</p>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+<script type="text/javascript" src="index.js"></script>
+
+</html>
