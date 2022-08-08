@@ -73,18 +73,14 @@ section.resultado div h2 {
     margin: 20px;
     font-size: 25px;
     font-weight: bold;
+    padding: 0px 20px;
 }
 
 section.resultado div p {
-    color: #495057;
-    font-size: 18px;
-}
-
-section.resultado div p {
-    font-size: 15px;
+    font-size: 16px;
     color: #495057;
     opacity: 0.8;
-    margin: 10px 0;
+    padding: 0px 20px;
 }
 
 textarea {
