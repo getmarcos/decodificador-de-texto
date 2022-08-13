@@ -1,70 +1,62 @@
-function botaoCriptografar() {
-    mostraTextoEncriptado();
+function valorDigitado() {
+    return input.value;
+}
 
-    var input = document.getElementById("input");
-    var output = document.getElementById("output");
+function valorResultado() {
+    return output.value;
+}
 
-    var texto = input.value;
-    var novaString = "";
+function mostraResultado() {
+    telaSemResultado.style.display = 'none';
+    telaResultado.style.display = 'block'
+}
 
-    if (input.value == '') {
-        output.value = 'Huum! Não encontrei nenhum texto para encriptografar.'
+function criptografar() {
+    var input = valorDigitado();
+    var novaString = '';
+
+    if (input == '') {
+        alert('Digite uma palavra ou frase')
     } else {
-        output.value = trocaLetras(texto);
-    }
-}
-
-function trocaLetras(valorDeEntrada) {
-    var novaString = "";
-    for (var i = 0; i < valorDeEntrada.length; i++) {
-        if (valorDeEntrada[i] == 'a') {
-            novaString += 'ai';
-        } else if (valorDeEntrada[i] == 'e') {
-            novaString += 'enter';
-        } else if (valorDeEntrada[i] == 'i') {
-            novaString += 'imes';
-        } else if (valorDeEntrada[i] == 'o') {
-            novaString += 'ober';
-        } else if (valorDeEntrada[i] == 'u') {
-            novaString += 'ufat';
-        } else {
-            novaString += valorDeEntrada[i];
+        for (var i = 0; i < input.length; i++) {
+            if (input[i] == 'a') {
+                novaString += 'ai';
+            } else if (input[i] == 'e') {
+                novaString += 'enter';
+            } else if (input[i] == 'i') {
+                novaString += 'imes';
+            } else if (input[i] == 'o') {
+                novaString += 'ober';
+            } else if (input[i] == 'u') {
+                novaString += 'ufat';
+            } else {
+                novaString += input[i];
+            }
         }
+        output.value = novaString;
+
+        mostraResultado();
     }
-    return novaString;
 }
 
-function botaoDescriptografar() {
-    mostraTextoEncriptado();
-
-    var input = document.getElementById("input");
-    var output = document.getElementById("output");
-
-    var texto = "";
-    var novaString = "";
+function descriptografar() {
+    var novaString = '';
 
     if (input.value == "" && output.value != "") {
-        texto = output.value;
+        novaString = valorResultado;
     } else {
-        texto = input.value;
+        novaString = valorDigitado();
     }
 
-    novaString = texto.replaceAll('ai', 'a');
+    novaString = novaString.replaceAll('ai', 'a');
     novaString = novaString.replaceAll('enter', 'e');
     novaString = novaString.replaceAll('imes', 'i');
     novaString = novaString.replaceAll('ober', 'o');
     novaString = novaString.replaceAll('ufat', 'u');
 
+    mostraResultado();
+
     output.value = novaString;
-}
-
-function mostraTextoEncriptado() {
-    document.getElementById("sem-resultado").style.display = "none";
-    document.getElementById("encriptado").style.display = "block";
-}
-
-function ocultarTextoEncriptado() {
-    document.getElementById("encriptado").style.display = "none";
 }
 
 function copiar() {
@@ -73,4 +65,18 @@ function copiar() {
     document.execCommand("copy");
 }
 
-ocultarTextoEncriptado();
+var input = document.getElementById('input');
+var output = document.getElementById('output');
+
+var telaResultado = document.getElementById('encriptado');
+telaResultado.style.display = 'none';
+var telaSemResultado = document.getElementById('sem-resultado');
+
+var botaoCriptografar = document.getElementById('criptografar');
+botaoCriptografar.onclick = criptografar;
+
+var botaoDescriptografar = document.getElementById('descriptografar');
+botaoDescriptografar.onclick = descriptografar;
+
+var botaoCopiar = document.getElementById('botao-output');
+botaoCopiar.onclick = copiar;

@@ -17,7 +17,7 @@
         </section>
 
         <section class="entrada">
-            <textarea id="input" model="input" autofocus autocorrect="on" placeholder="Digite seu texto"></textarea>
+            <textarea id="input" model="input" autofocus placeholder="Digite seu texto"></textarea>
 
             <div class="informacao">
                 <img src="img\exclamacao.svg" alt="Ateção as regras">
@@ -25,14 +25,14 @@
             </div>
 
             <div class="botoes">
-                <button id="codificar" onclick="botaoCriptografar()">Criptografar</button>
-                <button id="decodificar" onclick="botaoDescriptografar()">Descriptografar</button>
+                <button id="criptografar" onclick="botaoCriptografar()">Criptografar</button>
+                <button id="descriptografar" onclick="botaoDescriptografar()">Descriptografar</button>
             </div>
         </section>
 
         <section class="resultado">
             <div id="encriptado">
-                <textarea model="output" id="output" placeholder="Nenhuma mensagem"></textarea>
+                <textarea model="output" id="output" placeholder="Nenhuma mensagem" disabled></textarea>
                 <p class="copiado">Copie e desafie os seus amigos. 👇</p>
                 <button id="copiar" onclick="copiar()">Copiar</button>
             </div>
@@ -42,7 +42,6 @@
                 <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
             </div>
         </section>
-
     </main>
 </body>
 

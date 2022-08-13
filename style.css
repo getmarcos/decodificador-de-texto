@@ -159,13 +159,23 @@ section.resultado div button {
         margin-bottom: 10px;
     }
 
+    section.resultado div p {
+        margin: 0px;
+        margin-bottom: 10px;
+        padding: 60px;
+    }
+
     section.resultado div img {
         display: none;
     }
 
     section.resultado  {
         padding: 20px;
-        height: 200%;
+        height: 100%;
+    }
+
+    textarea {
+        height: 50%;
     }
 
     div.botoes {
